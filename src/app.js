@@ -1,12 +1,15 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
-const app = express()
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 require('dotenv').config()
 
-console.log(process.env.API_KEY_f)
+
+const app = express()
+const port = process.env.PORT || 3000
+
+
 
 //Define paths
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -105,6 +108,6 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log('Server started poggers')
+app.listen(port, () => {
+    console.log(`Server started poggers${port}`)
 })
