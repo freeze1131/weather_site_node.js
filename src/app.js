@@ -4,7 +4,9 @@ const hbs = require('hbs')
 const app = express()
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
+require('dotenv').config()
 
+console.log(process.env.API_KEY_f)
 
 //Define paths
 const publicDirectoryPath = path.join(__dirname, '../public')
